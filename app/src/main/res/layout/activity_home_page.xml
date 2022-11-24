@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePageActivity">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomePageActivity"
+        >
+
+    </RelativeLayout>
+    <FrameLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingRight="13dp"
+            android:src="@drawable/avatarofuser"
+            android:onClick="GoToProfile"
+            />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingRight="13dp"
+            android:src="@drawable/title"
+            />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/newproducts"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="40dp"
+        android:fontFamily="@font/geometriamedium"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:text="Что нового"
+        />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/location"
+        android:layout_gravity="right"
+        tools:ignore="RtlHardcoded" />
+<ListView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+
+</ListView>
+
+
+<HorizontalScrollView
+    android:id="@+id/horisont"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/location"
+    tools:ignore="MissingConstraints">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+            android:id="@+id/ScrollItem1"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horisont">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ScrollImage1"
+                android:layout_width="210dp"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/scroll_image" />
+
+            <TextView
+                android:id="@+id/ScrollDate1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ScrollImage1"
+                android:layout_marginBottom="-18dp"
+                android:textSize="10sp"
+                android:layout_marginLeft="20dp"
+                android:text="ОКТ 25 - ОКТ 27"
+                android:textColor="@color/gray" />
+
+            <TextView
+                android:id="@+id/NameItem1"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ScrollDate1"
+                android:layout_marginBottom="-32dp"
+                android:layout_marginLeft="22dp"
+                android:textSize="10sp"
+                android:text="Открытие выставки в музее изобразительных искусств"
+                android:textColor="@color/black"
+                android:fontFamily="@font/geometriamedium"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Like1"
+                android:layout_width="16dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/NameItem1"
+                android:layout_marginBottom="-36dp"
+                android:layout_marginLeft="90dp"
+                android:src="@drawable/like"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Go1"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="-32dp"
+                android:layout_marginLeft="112dp"
+                android:layout_alignBottom="@+id/NameItem1"
+                android:textSize="12sp"
+                android:text="Я иду"
+                android:textAllCaps="false"
+                android:textColor="@color/maincolor"
+                android:background="@drawable/framesmaincolor"
+                android:stateListAnimator="@null"
+                />
+        </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+        <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+            android:id="@+id/ScrollItem2"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horisont">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ScrollImage2"
+                android:layout_width="210dp"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/scroll_image" />
+
+            <TextView
+                android:id="@+id/ScrollDate2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ScrollImage2"
+                android:layout_marginBottom="-18dp"
+                android:textSize="10sp"
+                android:layout_marginLeft="20dp"
+                android:text="ОКТ 25 - ОКТ 27"
+                android:textColor="@color/gray" />
+
+            <TextView
+                android:id="@+id/NameItem2"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ScrollDate2"
+                android:layout_marginBottom="-32dp"
+                android:layout_marginLeft="22dp"
+                android:textSize="10sp"
+                android:text="Открытие выставки в музее изобразительных искусств"
+                android:textColor="@color/black"
+                android:fontFamily="@font/geometriamedium"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Like2"
+                android:layout_width="16dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/NameItem2"
+                android:layout_marginBottom="-36dp"
+                android:layout_marginLeft="90dp"
+                android:src="@drawable/like"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Go2"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="-32dp"
+                android:layout_marginLeft="112dp"
+                android:layout_alignBottom="@+id/NameItem2"
+                android:textSize="12sp"
+                android:text="Я иду"
+                android:textAllCaps="false"
+                android:textColor="@color/maincolor"
+                android:background="@drawable/framesmaincolor"
+                android:stateListAnimator="@null"
+                />
+        </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+        <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+            android:id="@+id/ScrollItem3"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horisont">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ScrollImage3"
+                android:layout_width="210dp"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/scroll_image" />
+
+            <TextView
+                android:id="@+id/ScrollDate3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ScrollImage3"
+                android:layout_marginBottom="-18dp"
+                android:textSize="10sp"
+                android:layout_marginLeft="20dp"
+                android:text="ОКТ 25 - ОКТ 27"
+                android:textColor="@color/gray" />
+
+            <TextView
+                android:id="@+id/NameItem3"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ScrollDate3"
+                android:layout_marginBottom="-32dp"
+                android:layout_marginLeft="22dp"
+                android:textSize="10sp"
+                android:text="Открытие выставки в музее изобразительных искусств"
+                android:textColor="@color/black"
+                android:fontFamily="@font/geometriamedium"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Like3"
+                android:layout_width="16dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/NameItem3"
+                android:layout_marginBottom="-36dp"
+                android:layout_marginLeft="90dp"
+                android:src="@drawable/like"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Go3"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="-32dp"
+                android:layout_marginLeft="112dp"
+                android:layout_alignBottom="@+id/NameItem3"
+                android:textSize="12sp"
+                android:text="Я иду"
+                android:textAllCaps="false"
+                android:textColor="@color/maincolor"
+                android:background="@drawable/framesmaincolor"
+                android:stateListAnimator="@null"
+                />
+        </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+    </LinearLayout>
+</HorizontalScrollView>
+
+
+
+
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/alert"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="40dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/geometriamedium"
+        android:textSize="18sp"
+        android:text="Ваши группы"
+
+        />
+    <TextView
+        android:id="@+id/alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/SearchGroups"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/gray"
+        android:text="У вас пока нет групп"
+        android:textSize="18sp"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SearchGroups"
+        android:layout_width="190dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/FooterHomePage"
+        android:text="Найти группу"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:fontFamily="@font/helvetica"
+        android:background="@drawable/button_scroll1"
+        android:stateListAnimator="@null"
+        />
+
+    <FrameLayout
+        android:id="@+id/FooterHomePage"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_gravity="bottom"
+        tools:ignore="UselessLeaf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/HomeButton"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="50dp"
+            tools:ignore="RtlHardcoded"
+            android:backgroundTint="@color/white"
+            android:stateListAnimator="@null"
+            android:onClick="TapHomeButton"
+            android:src="@drawable/main_button"
+            />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/SearchButton"
+            android:layout_width="35dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            tools:ignore="RtlHardcoded"
+            android:backgroundTint="@color/white"
+            android:stateListAnimator="@null"
+            android:onClick="TapSearchButton"
+            android:src="@drawable/search_button"
+            />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/NotificationButton"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="35dp"
+            tools:ignore="RtlHardcoded"
+            android:backgroundTint="@color/white"
+            android:stateListAnimator="@null"
+            android:onClick="TapNotificationButton"
+            android:src="@drawable/notification_button"
+            />
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

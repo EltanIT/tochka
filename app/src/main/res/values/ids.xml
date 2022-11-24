@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="TitleTxt1" type="id" />
+    <item name="TitleTxt2" type="id" />
+    <item name="FindHobby" type="id" />
+    <item name="EducationButton" type="id" />
+    <item name="CommunicationButton" type="id" />
+    <item name="SportButton" type="id" />
+    <item name="SelfDevelopmentButton" type="id" />
+    <item name="LanguagesButton" type="id" />
+    <item name="BusinessButton" type="id" />
+</resources>
