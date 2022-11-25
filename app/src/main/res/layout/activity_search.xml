@@ -1,9 +1,554 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginEnd="0dp"
+                tools:ignore="MissingConstraints"
+                >
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:paddingRight="13dp"
+                    android:onClick="OnClickProfile"
+                    android:src="@drawable/avatarofuser"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/tochka"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingRight="13dp"
+                    android:src="@drawable/title"
+                    />
+            </FrameLayout>
+        </androidx.appcompat.widget.Toolbar>
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="675dp"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </FrameLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/TextEditSearchMer"
+                    android:layout_marginTop="100dp"
+                    android:layout_centerHorizontal="true"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="20dp"
+                    android:layout_width="330dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/search_text_edit_shape"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/TodayNewsButtom"
+                    android:layout_width="110dp"
+                    android:layout_height="30dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/TomorrowNewsButtom"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="170dp"
+                    android:layout_centerHorizontal="true"
+                    android:backgroundTint="@color/gray"
+                    android:background="@drawable/button_shape_option"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/TomorrowNewsButtom"
+                    android:layout_width="110dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="170dp"
+                    android:layout_toRightOf="@id/TodayNewsButtom"
+                    android:layout_marginStart="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:background="@drawable/button_shape_option"
+                    />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/AnotherDateNewsButtom"
+                    android:layout_width="110dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="170dp"
+                    android:layout_toLeftOf="@id/TodayNewsButtom"
+                    android:layout_marginEnd="10dp"
+                    android:backgroundTint="@color/gray"
+                    android:background="@drawable/button_shape_option"
+                    app:layout_constraintStart_toEndOf="@id/TomorrowNewsButtom" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="240dp"
+                    android:layout_marginStart="260dp"
+                    android:backgroundTint="@color/white"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/location_icon"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="250dp"
+                    android:layout_marginStart="295dp"
+                    android:text="Изменить"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="41dp"
+                    android:layout_marginTop="244dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="Russia, Orenburg"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="320dp"
+                    android:layout_height="210dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="290dp"
+                    android:backgroundTint="@color/gray"
+                    android:background="@drawable/button_shape_option"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Проходят сегодня"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="540dp"
+                    android:layout_marginStart="41dp"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    />
+
+                <HorizontalScrollView
+                    android:id="@+id/scrollViewEl"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="582dp"
+                    android:backgroundTint="@color/gray"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="16dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+                            android:id="@+id/RelativeLayoutScroll1_1"
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            >
+
+                            <ImageView
+                                android:layout_width="200dp"
+                                android:layout_height="120dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@color/gray"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="120dp"
+                                android:layout_marginStart="10dp"
+                                android:text="24-25 Oct"
+                                android:textSize="15sp"
+                                />
+
+                            <TextView
+                                android:layout_width="160dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="140dp"
+                                android:layout_marginStart="10dp"
+                                android:text="Открытие выставки в доме труда"
+                                android:textSize="14dp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="64dp"
+                                android:layout_height="22dp"
+                                android:layout_marginTop="183dp"
+                                android:layout_marginStart="130dp"
+                                android:backgroundTint="@color/gray"
+                                android:background="@drawable/button_shape_option"
+                                />
+
+                            <ImageButton
+                                android:layout_width="16dp"
+                                android:layout_height="13dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="100dp"
+                                android:layout_marginTop="188dp"
+                                android:scaleType="fitXY"
+                                android:background="@color/white"
+                                android:src="@drawable/like"
+                                />
+
+                        </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+                        <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+                            android:id="@+id/RelativeLayoutScroll1_2"
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="20dp"
+                            >
+
+                            <ImageView
+                                android:layout_width="200dp"
+                                android:layout_height="120dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@color/gray"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="120dp"
+                                android:layout_marginStart="10dp"
+                                android:text="24-25 Oct"
+                                android:textSize="15sp"
+                                />
+
+                            <TextView
+                                android:layout_width="160dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="140dp"
+                                android:layout_marginStart="10dp"
+                                android:text="Открытие выставки в доме труда"
+                                android:textSize="14dp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="64dp"
+                                android:layout_height="22dp"
+                                android:layout_marginTop="183dp"
+                                android:layout_marginStart="130dp"
+                                android:backgroundTint="@color/gray"
+                                android:background="@drawable/button_shape_option"
+                                />
+
+                            <ImageButton
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="100dp"
+                                android:layout_marginTop="188dp"
+                                android:scaleType="fitXY"
+                                android:background="@color/white"
+                                android:src="@drawable/like"
+                                />
+
+                        </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+                        <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+                            android:id="@+id/RelativeLayoutScroll1_3"
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="20dp"
+                            >
+
+                            <ImageView
+                                android:layout_width="200dp"
+                                android:layout_height="120dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@color/gray"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="120dp"
+                                android:layout_marginStart="10dp"
+                                android:text="24-25 Oct"
+                                android:textSize="15sp"
+                                />
+
+                            <TextView
+                                android:layout_width="160dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="140dp"
+                                android:layout_marginStart="10dp"
+                                android:text="Открытие выставки в доме труда"
+                                android:textSize="14dp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="64dp"
+                                android:layout_height="22dp"
+                                android:layout_marginTop="183dp"
+                                android:layout_marginStart="130dp"
+                                android:backgroundTint="@color/gray"
+                                android:background="@drawable/button_shape_option"
+                                />
+
+                            <ImageButton
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="100dp"
+                                android:layout_marginTop="188dp"
+                                android:scaleType="fitXY"
+                                android:background="@color/white"
+                                android:src="@drawable/like"
+                                />
+
+                        </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="900dp"
+                    android:backgroundTint="@color/gray"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:layout_editor_absoluteX="16dp"
+
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        >
+
+                        <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+                            android:id="@+id/RelativeLayoutScroll2_1"
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            >
+
+                            <ImageView
+                                android:layout_width="200dp"
+                                android:layout_height="120dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@color/gray"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="120dp"
+                                android:layout_marginStart="10dp"
+                                android:text="24-25 Oct"
+                                android:textSize="15sp"
+                                />
+
+                            <TextView
+                                android:layout_width="160dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="140dp"
+                                android:layout_marginStart="10dp"
+                                android:text="Открытие выставки в доме труда"
+                                android:textSize="14dp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="64dp"
+                                android:layout_height="22dp"
+                                android:layout_marginTop="183dp"
+                                android:layout_marginStart="130dp"
+                                android:backgroundTint="@color/gray"
+                                />
+
+                            <ImageButton
+                                android:layout_width="16dp"
+                                android:layout_height="13dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="100dp"
+                                android:layout_marginTop="188dp"
+                                android:scaleType="fitXY"
+                                android:background="@color/white"
+                                />
+
+                        </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+                        <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+                            android:id="@+id/RelativeLayoutScroll2_2"
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="20dp"
+                            >
+
+                            <ImageView
+                                android:layout_width="200dp"
+                                android:layout_height="120dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@color/gray"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="120dp"
+                                android:layout_marginStart="10dp"
+                                android:text="24-25 Oct"
+                                android:textSize="15sp"
+                                />
+
+                            <TextView
+                                android:layout_width="160dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="140dp"
+                                android:layout_marginStart="10dp"
+                                android:text="Открытие выставки в доме труда"
+                                android:textSize="14dp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="64dp"
+                                android:layout_height="22dp"
+                                android:layout_marginTop="183dp"
+                                android:layout_marginStart="130dp"
+                                android:backgroundTint="@color/gray"
+                                />
+
+                            <ImageButton
+                                android:layout_width="16dp"
+                                android:layout_height="13dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="100dp"
+                                android:layout_marginTop="188dp"
+                                android:scaleType="fitXY"
+                                android:background="@color/white"
+                                />
+
+                        </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+                        <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+                            android:id="@+id/RelativeLayoutScroll2_3"
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginStart="20dp"
+                            >
+
+                            <ImageView
+                                android:layout_width="200dp"
+                                android:layout_height="120dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@color/gray"
+                                />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="120dp"
+                                android:layout_marginStart="10dp"
+                                android:text="24-25 Oct"
+                                android:textSize="15sp"
+                                />
+
+                            <TextView
+                                android:layout_width="160dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="140dp"
+                                android:layout_marginStart="10dp"
+                                android:text="Открытие выставки в доме труда"
+                                android:textSize="14dp" />
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:layout_width="64dp"
+                                android:layout_height="22dp"
+                                android:layout_marginTop="183dp"
+                                android:layout_marginStart="130dp"
+                                android:backgroundTint="@color/gray"
+                                />
+
+                            <ImageButton
+                                android:layout_width="16dp"
+                                android:layout_height="13dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="100dp"
+                                android:layout_marginTop="188dp"
+                                android:scaleType="fitXY"
+                                android:background="@color/white"
+                                />
+
+                        </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="830dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/Study"
+                            android:layout_marginStart="25dp"
+                            android:layout_width="110dp"
+                            android:layout_height="30dp"
+                            android:backgroundTint="@color/gray"
+                            />
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/Study1"
+                            android:layout_width="110dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="15dp"
+                            android:backgroundTint="@color/gray"
+                            /><androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Study2"
+                        android:layout_width="110dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="15dp"
+                        android:backgroundTint="@color/gray"
+                        /><androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Study3"
+                        android:layout_width="110dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="15dp"
+                        android:backgroundTint="@color/gray"
+                        />
+
+
+                    </LinearLayout>
+
+
+
+
+                </HorizontalScrollView>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>
