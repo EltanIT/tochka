@@ -36,19 +36,51 @@
                     />
             </FrameLayout>
         </androidx.appcompat.widget.Toolbar>
-        <androidx.appcompat.widget.Toolbar
+         <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <FrameLayout
+            android:id="@+id/FooterHomePage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="675dp"
+            android:layout_height="65dp"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="665dp"
             >
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/HomeButton"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="50dp"
+                android:backgroundTint="@color/white"
+                android:stateListAnimator="@null"
+                android:onClick="TapHomeButton"
+                android:src="@drawable/main_button"
+                />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/SearchButton"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/white"
+                android:stateListAnimator="@null"
+                android:onClick="TapSearchButton"
+                android:src="@drawable/search_button"
+                />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/NotificationButton"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="35dp"
+                android:backgroundTint="@color/white"
+                android:stateListAnimator="@null"
+                android:onClick="TapNotificationButton"
+                android:src="@drawable/notification_button"
+                />
 
-
-            </FrameLayout>
-
-        </androidx.appcompat.widget.Toolbar>
+        </FrameLayout>
+    </androidx.appcompat.widget.Toolbar>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -381,6 +413,7 @@
                                 android:layout_marginTop="183dp"
                                 android:layout_marginStart="130dp"
                                 android:backgroundTint="@color/gray"
+                                android:background="@drawable/button_shape_option"
                                 />
 
                             <ImageButton
@@ -391,6 +424,7 @@
                                 android:layout_marginTop="188dp"
                                 android:scaleType="fitXY"
                                 android:background="@color/white"
+                                android:src="@drawable/like"
                                 />
 
                         </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
@@ -432,6 +466,7 @@
                                 android:layout_marginTop="183dp"
                                 android:layout_marginStart="130dp"
                                 android:backgroundTint="@color/gray"
+                                android:background="@drawable/button_shape_option"
                                 />
 
                             <ImageButton
@@ -442,6 +477,7 @@
                                 android:layout_marginTop="188dp"
                                 android:scaleType="fitXY"
                                 android:background="@color/white"
+                                android:src="@drawable/like"
                                 />
 
                         </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
@@ -483,6 +519,7 @@
                                 android:layout_marginTop="183dp"
                                 android:layout_marginStart="130dp"
                                 android:backgroundTint="@color/gray"
+                                android:background="@drawable/button_shape_option"
                                 />
 
                             <ImageButton
@@ -493,6 +530,7 @@
                                 android:layout_marginTop="188dp"
                                 android:scaleType="fitXY"
                                 android:background="@color/white"
+                                android:src="@drawable/like"
                                 />
 
                         </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
@@ -517,6 +555,7 @@
                             android:layout_width="110dp"
                             android:layout_height="30dp"
                             android:backgroundTint="@color/gray"
+                            android:background="@drawable/button_shape_option"
                             />
                         <androidx.appcompat.widget.AppCompatButton
                             android:id="@+id/Study1"
@@ -524,18 +563,23 @@
                             android:layout_height="30dp"
                             android:layout_marginStart="15dp"
                             android:backgroundTint="@color/gray"
-                            /><androidx.appcompat.widget.AppCompatButton
+                            android:background="@drawable/button_shape_option"
+                            />
+                        <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/Study2"
                         android:layout_width="110dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="15dp"
                         android:backgroundTint="@color/gray"
-                        /><androidx.appcompat.widget.AppCompatButton
+                            android:background="@drawable/button_shape_option"
+                        />
+                        <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/Study3"
                         android:layout_width="110dp"
                         android:layout_height="30dp"
                         android:layout_marginStart="15dp"
                         android:backgroundTint="@color/gray"
+                            android:background="@drawable/button_shape_option"
                         />
 
 

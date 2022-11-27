@@ -1,55 +1,467 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/FooterHomePage"
+   <androidx.appcompat.widget.Toolbar
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <FrameLayout
+           android:id="@+id/FooterHomePage"
+           android:layout_width="match_parent"
+           android:layout_height="65dp"
+           android:layout_gravity="bottom"
+           android:layout_marginTop="665dp"
+           >
+           <androidx.appcompat.widget.AppCompatImageView
+               android:id="@+id/HomeButton"
+               android:layout_width="45dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="start"
+               android:layout_marginStart="50dp"
+               android:backgroundTint="@color/white"
+               android:stateListAnimator="@null"
+               android:onClick="TapHomeButton"
+               android:src="@drawable/main_button"
+               />
+           <androidx.appcompat.widget.AppCompatImageView
+               android:id="@+id/SearchButton"
+               android:layout_width="35dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:backgroundTint="@color/white"
+               android:stateListAnimator="@null"
+               android:onClick="TapSearchButton"
+               android:src="@drawable/search_button"
+               />
+           <androidx.appcompat.widget.AppCompatImageView
+               android:id="@+id/NotificationButton"
+               android:layout_width="75dp"
+               android:layout_height="wrap_content"
+               android:layout_gravity="end"
+               android:layout_marginEnd="35dp"
+               android:backgroundTint="@color/white"
+               android:stateListAnimator="@null"
+               android:onClick="TapNotificationButton"
+               android:src="@drawable/notification_button"
+               />
+
+       </FrameLayout>
+   </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_gravity="bottom"
-        tools:ignore="UselessLeaf"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/HomeButton"
-            android:layout_width="45dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:layout_marginStart="50dp"
-            tools:ignore="RtlHardcoded"
-            android:backgroundTint="@color/white"
-            android:stateListAnimator="@null"
-            android:onClick="TapHomeButton"
-            android:src="@drawable/main_button"
-            />
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/SearchButton"
-            android:layout_width="35dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            tools:ignore="RtlHardcoded"
-            android:backgroundTint="@color/white"
-            android:stateListAnimator="@null"
-            android:onClick="TapSearchButton"
-            android:src="@drawable/search_button"
-            />
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/NotificationButton"
-            android:layout_width="75dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:layout_marginEnd="35dp"
-            tools:ignore="RtlHardcoded"
-            android:backgroundTint="@color/white"
-            android:stateListAnimator="@null"
-            android:onClick="TapNotificationButton"
-            android:src="@drawable/notification_button"
-            />
+        android:layout_height="match_parent">
+        <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/profile_tool_bar_shape"
+                android:backgroundTint="@color/maincolor"
+                >
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="140dp"
+                    android:layout_height="140dp"
+                    android:background="@drawable/round_shape"
+                    android:backgroundTint="@color/gray"
+                    android:layout_marginTop="60dp"
+                    android:layout_gravity="center"
 
-    </FrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nickname"
+                    android:textSize="20dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/white"
+                    />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/settings"
+                    android:layout_gravity="top|end"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="15dp"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/next"
+                    android:onClick="OnClickProfile"
+                    />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="137dp"
+                android:layout_marginTop="210dp"
+                android:text="Name Surname"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="145dp"
+                android:layout_marginTop="250dp"
+                >
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/clarity_info_standard_line"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Обо мне"
+                    android:textSize="16sp"
+                    android:textColor="@color/maincolor"
+                    />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:src="@drawable/line_1_and_2"
+                android:layout_marginTop="310dp"
+                android:layout_marginStart="115dp"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:src="@drawable/line_1_and_2"
+                android:layout_marginTop="310dp"
+                android:layout_marginStart="258dp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="300dp"
+
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="142"
+                    android:layout_marginStart="22dp"
+                    android:textSize="16sp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50"
+                    android:textSize="16sp"
+                    android:layout_marginStart="157dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textSize="16sp"
+                    android:layout_marginStart="290dp"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="328dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Подписки"
+                    android:textSize="11dp"
+                    android:textColor="@color/gray"
+                    android:layout_marginStart="22dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Подписчики"
+                    android:textSize="11dp"
+                    android:textColor="@color/gray"
+                    android:layout_marginStart="157dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Мероприятия"
+                    android:textSize="11dp"
+                    android:textColor="@color/gray"
+                    android:layout_marginStart="290dp"
+                    />
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="400dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="Мои увлечения"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="300dp"
+                    >
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:layout_marginTop="1dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Добавить"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/gray"
+                        />
+                </LinearLayout>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    >
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        >
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="135dp"
+                            android:layout_height="35dp"
+                            android:layout_marginStart="20dp"
+                            android:background="@drawable/my_hobby_list_button_shape"
+                            /><androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="135dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="165dp"
+                        android:background="@drawable/my_hobby_list_button_shape"
+                        /><androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="135dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="310dp"
+                        android:background="@drawable/my_hobby_list_button_shape"
+                        /><androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="135dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="455dp"
+                        android:background="@drawable/my_hobby_list_button_shape"
+                        />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:layout_width="135dp"
+                            android:layout_height="35dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="47dp"
+                            android:background="@drawable/my_hobby_list_button_shape"
+                            /><androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="135dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="170dp"
+                        android:layout_marginTop="47dp"
+                        android:background="@drawable/my_hobby_list_button_shape"
+                        /><androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="135dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="315dp"
+                        android:layout_marginTop="47dp"
+                        android:background="@drawable/my_hobby_list_button_shape"
+                        /><androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="135dp"
+                        android:layout_height="35dp"
+                        android:layout_marginStart="460dp"
+                        android:layout_marginTop="47dp"
+                        android:background="@drawable/my_hobby_list_button_shape"
+                        />
+                    </RelativeLayout>
+
+                </HorizontalScrollView>
+
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="560dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Мои группы"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:layout_marginStart="20dp"
+                        android:textColor="@color/black"
+                        />
+
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:layout_marginStart="20dp"
+                        >
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/round_shape"
+                                android:backgroundTint="@color/gray"
+                                android:layout_marginStart="20dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Name group"
+                                android:layout_marginStart="75dp"
+                                android:textSize="14dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15 участников"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="75dp"
+                                android:textSize="10dp"
+                                android:textColor="@color/gray"
+                                />
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:layout_height="17dp"
+                                android:layout_marginStart="340dp"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/next_main_color"
+                                />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            >
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/round_shape"
+                                android:backgroundTint="@color/gray"
+                                android:layout_marginStart="20dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Name group"
+                                android:layout_marginStart="75dp"
+                                android:textSize="14dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15 участников"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="75dp"
+                                android:textSize="10dp"
+                                android:textColor="@color/gray"
+                                />
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:layout_height="17dp"
+                                android:layout_marginStart="340dp"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/next_main_color"
+                                />
+
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="25dp"
+                            >
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:background="@drawable/round_shape"
+                                android:backgroundTint="@color/gray"
+                                android:layout_marginStart="20dp"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Name group"
+                                android:layout_marginStart="75dp"
+                                android:textSize="14dp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"
+                                />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="15 участников"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="75dp"
+                                android:textSize="10dp"
+                                android:textColor="@color/gray"
+                                />
+                            <ImageView
+                                android:layout_width="17dp"
+                                android:layout_height="17dp"
+                                android:layout_marginStart="340dp"
+                                android:layout_marginTop="10dp"
+                                android:src="@drawable/next_main_color"
+                                />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>
+
+
