@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:id="@+id/toolbar_up_menu"
+    android:minHeight="?attr/actionBarSize"
+    android:background="@color/white"
+    >
+    <FrameLayout
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:paddingRight="13dp"
+            android:src="@drawable/avatarofuser"
+            android:onClick="GoToProfile"
+            />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingRight="13dp"
+            android:src="@drawable/title"
+            />
+
+    </FrameLayout>
+
+</androidx.appcompat.widget.Toolbar>
