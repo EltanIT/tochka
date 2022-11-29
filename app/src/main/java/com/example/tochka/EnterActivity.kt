@@ -12,7 +12,7 @@ class EnterActivity : AppCompatActivity() {
     }
 
     fun StartToHomePage(view: View) {
-        val intent = Intent(this@EnterActivity,HomePageActivity::class.java)
+        val intent = Intent(this@EnterActivity,GreetingActivity::class.java)
         startActivity(intent)
         finish()
     }
